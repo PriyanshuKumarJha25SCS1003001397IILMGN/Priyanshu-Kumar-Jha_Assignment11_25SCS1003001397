@@ -1,0 +1,59 @@
+// Parent Class
+class Person {
+    String name;
+    int age;
+    String email;
+
+    // Parent Constructor
+    Person(String n, int a, String e) {
+        name = n;
+        age = a;
+        email = e;
+    }
+
+    // Display Person Details
+    void displayPersonDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Email: " + email);
+    }
+}
+
+// Child Class
+class Student extends Person {
+    int studentID;
+    String course;
+
+    // Child Constructor
+    Student(String n, int a, String e,
+            int id, String c) {
+
+        super(n, a, e);
+
+        studentID = id;
+        course = c;
+    }
+
+    // Display Student Details
+    void displayStudentDetails() {
+        System.out.println("Student ID: " + studentID);
+        System.out.println("Course: " + course);
+    }
+}
+
+// Main Class
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student(
+            "Rahul", 20, "rahul@gmail.com",
+            101, "Java"
+        );
+
+        System.out.println("Person Details:");
+        s1.displayPersonDetails();
+
+        System.out.println("\nStudent Details:");
+        s1.displayStudentDetails();
+    }
+}
